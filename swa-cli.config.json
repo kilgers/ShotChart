@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "shot-chart": {
+      "appLocation": ".",
+      "outputLocation": ".",
+      "appName": "shot-chart",
+      "resourceGroup": "shot-chart-rg"
+    }
+  }
+}
