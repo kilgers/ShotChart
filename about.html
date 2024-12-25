@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5000344226677195"
+     crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible">
+        <title>Make some shot charts!</title>
+        <meta name="description" content="An online resource to make shot charts from historic NBA data.">
+        <script type="module">
+        const selectElement = document.getElementById("playerName")
+        selectElement.addEventListener("change", async function(){
+            const selectedValue = this.value;
+            const url = "https://www.letsplaywithballs.com/?name=" + selectedValue + "&get_active_years=True"
+            try{
+                const response = await
+                fetch(url, {mode: 'no-cors'});
+                if(!response.ok){
+                    throw new Error("Response status: ${response.status}");
+                }
+                const json = await
+                response.json();
+                const selectElement = document.getElementById("year");
+                selectElement.innerHTML = "";
+                console.log(json)
+                let seasonArray = JSON.stringify(json);
+                seasonArray = JSON.parse(seasonArray);
+                for(let i = 0; i < seasonArray.length; i++){
+                    const option = document.createElement("option");
+                    option.value = seasonArray[i];
+                    option.text = seasonArray[i];
+                    selectElement.add(option);
+                }
+                console.log(json);
+            } catch (error) {
+            console.error(error.message)}
+        })
+        </script>
+        <style>
+.sidebar{
+  --dot-bg: #962d06;
+  --dot-color: #C43708;
+  --dot-size: 4px;
+  --dot-space: 2px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 80%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 80%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+    float: left;
+    margin: 0;
+    padding: 25px 0px;
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    
+}
+footer{
+  --dot-bg: #962d06;
+  --dot-color: #C43708;
+  --dot-size: 4px;
+  --dot-space: 2px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 80%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 80%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    text-align: center;
+    height: 30px;
+}
+.chart {
+    width: 72%;
+    float: right;
+    padding: 25px 0px;
+    margin: 0;
+    color: black;
+}
+#df_table{
+font-size: 12px;
+}
+    </style>
+    </head>
+    <body>
+        <div class="sidebar">
+            <form method="get">
+            <label for"name">
+                Choose a player:
+            </label>
+            <input type="select" list="name" name="name" id="playerName" autocomplete="on">
+            <datalist id="name" name="name">
+            </datalist><br><br>
+                <label for="year">Choose a year.</label><br>
+            <select id="year" name="year">
+            </select><br><br>
+                <input type="submit" value="Get Shot Chart">
+            </form>
+            <br>
+            Please Note: The NBA did not automate player tracking until 2013. There is data available before this year, but not for every game. Requests before 2013 may be missing some data, or may not have any data. Season level stats will still be available for years without chart data.
+        </div>
+        <div class="chart">
+        Many thanks to <a href="kivanpolimis.com">Kivan Polimis</a> who inspired this site with his post on <a href="https://kivanpolimis.com/nba-shot-charts-part-1.html">making shot charts</a>! After which I thought this needs to be a thing for everyone.<br>
+        Shout out also to the OKC Thunder, whose interview process for a minimum wage interniship pissed me off just enough for me to make it happen.<br>
+        If you would like to contact the developer for any reason, I can be reached at <a href="mailto:shawnkilger@gmail.com?subject=shotcharts">shawnkilger@gmail.com</a>. But please don't, as I am email shy.<br>
+        <H3>Our Cookie Policy</H3><br>
+        Our policy on cookies is to not use them. I don't care where you've been on the internet. I don't care who you are. I encourage everyone on the internet to attempt to adopt this policy. There are no such things as necessary cookies.
+        <br>
+    
+        </div>
+        <footer>
+        <div>
+        <a href="https://www.letsplaywithballs.com/?page=about">About This Website</a>
+        </div>
+        </footer>
+    </body>
+</html>
