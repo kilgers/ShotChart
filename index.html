@@ -2,7 +2,7 @@
     document.addEventListener('DOMContentLoaded', loadPage());
     function loadPage() {
         const req = new Request('https://shotchart1.azurewebsites.net');
-        Window.document = req.body;
-        console.log(req.body)
+        let fetchRes = fetch(req);            
+        Window.document = res.body;
     };
 </script>
