@@ -5,6 +5,6 @@
         let res = fetch(req);
         console.log(res.status)
         console.log(res.text())
-        Window.document = res.text;
+        Window.document.write(res.text);
     };
 </script>
