@@ -1,1 +1,7 @@
-Main Page
+<script>
+    document.addEventListener('DOMContentLoaded', loadPage());
+    function loadPage() {
+        const req = new Request('https://shotchart1.azurewebsites.net');
+        Window.document = req.body;
+    };
+</script>
