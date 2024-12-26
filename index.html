@@ -23,7 +23,7 @@
         const selectElement = document.getElementById("playerName")
         selectElement.addEventListener("change", async function(){
             const selectedValue = this.value;
-            const url = "https://https://shotchart1.azurewebsites.net//?name=" + selectedValue + "&get_active_years=True"
+            const url = "https://https://api.letsplaywithballs.com//?name=" + selectedValue + "&get_active_years=True"
             try{
                 const response = await
                 fetch(url, {mode: 'no-cors'});
@@ -51,7 +51,7 @@
         formElement.addEventListener("submit", async function(){
 		let name = document.getElementById("name");
 		let year = document.getElementById("year");
-            const url = "https://https://shotchart1.azurewebsites.net//?name=" + name + "&year=" + year;
+            const url = "https://https://api.letsplaywithballs.com//?name=" + name + "&year=" + year;
             try{
                 const response = await
                 fetch(url, {mode: 'no-cors'});
