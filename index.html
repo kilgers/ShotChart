@@ -23,7 +23,7 @@
         const selectElement = document.getElementById("playerName")
         selectElement.addEventListener("change", async function(){
             const selectedValue = this.value;
-            const url = "https://www.letsplaywithballs.com/?name=" + selectedValue + "&get_active_years=True"
+            const url = "https://https://shotchart1.azurewebsites.net//?name=" + selectedValue + "&get_active_years=True"
             try{
                 const response = await
                 fetch(url, {mode: 'no-cors'});
@@ -47,6 +47,25 @@
             } catch (error) {
             console.error(error.message)}
         })
+        const formElement = document.getElementById("chartForm")
+        formElement.addEventListener("submit", async function(){
+		let name = document.getElementById("name");
+		let year = document.getElementById("year");
+            const url = "https://https://shotchart1.azurewebsites.net//?name=" + name + "&year=" + year;
+            try{
+                const response = await
+                fetch(url, {mode: 'no-cors'});
+                if(!response.ok){
+                    throw new Error("Response status: ${response.status}");
+                }
+                const divText = await
+                response.text();
+                const selectDiv = document.getElementById("chartDiv");
+                selectElement.innerHTML = divText;
+            } catch (error) {
+            console.error(error.message)}
+        })
+
         </script>
         <style>
 .sidebar{
@@ -100,7 +119,7 @@ font-size: 12px;
     </head>
     <body>
         <div class="sidebar">
-            <form method="get" >
+            <form method="get" id="chartForm">
             <label for"name">
                 Choose a player:
             </label>
