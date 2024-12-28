@@ -19,6 +19,8 @@
                 fetch(url, {mode: 'no-cors'});
                 if(!response.ok){
                     throw new Error("Response status: ${response.status}");
+			console.log(response.status)
+			console.log(response.url)
                 }
                 const json = await
                 response.json();
