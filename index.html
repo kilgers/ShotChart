@@ -40,7 +40,7 @@
         })
         const formElement = document.getElementById("chartForm")
         formElement.addEventListener("submit", async function(){
-		const formdata = new formData(formElement);
+		const formdata = new FormData(formElement);
 		let name = formdata.get('name');
 		let year = formdata.get('year');
 		
