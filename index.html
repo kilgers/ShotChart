@@ -38,13 +38,14 @@
             } catch (error) {
             console.error(error.message)}
         })
-        const buttonElement = document.getElementById("submitButton")
-        submitButton.addEventListener("click", async function(){
-		const formdata = new FormData(formElement);
-		let name = formdata.get('playername');
-		let year = formdata.get('year');
+        const formElement = document.getElementById("chartForm")
+        formElement.addEventListener("click", async function(event){
+		event.preventDefault()
+		const formdata = new FormData(formElement)
+		let playername = formdata.get("playername");
+		let year = formdata.get("year");
 		
-		const url = "https://api.letsplaywithballs.com/?name=" + name + "&year=" + year;
+		const url = "https://api.letsplaywithballs.com/?name=" + playername + "&year=" + year;
             try{
                 const response = await
                 fetch(url, {mode: 'cors'});
@@ -60,7 +61,7 @@
         })
 
         </script>
-        <style>
+        <style>e
 .sidebar{
   --dot-bg: #962d06;
   --dot-color: #C43708;
@@ -123,7 +124,7 @@ font-size: 12px;
                 <label for="year">Choose a year.</label><br>
             <select id="year" name="year">
             </select><br><br>
-                <input type="button" value="Get Shot Chart" id = "submitButton">
+                <input type="submit" value="Get Shot Chart">
             </form>
             <br>
             Please Note: The NBA did not automate player tracking until 2013. There is data available before this year, but not for every game. Requests before 2013 may be missing some data, or may not have any data. Season level stats will still be available for years without data.
