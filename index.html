@@ -40,8 +40,8 @@
         })
         const formElement = document.getElementById("chartForm")
         formElement.addEventListener("submit", async function(){
-		let name = document.getElementById("name");
-		let year = document.getElementById("year");
+		let name = document.getElementById("name").value;
+		let year = document.getElementById("year").value;
             const url = "https://api.letsplaywithballs.com/?name=" + name + "&year=" + year;
             try{
                 const response = await
