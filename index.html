@@ -40,9 +40,11 @@
         })
         const formElement = document.getElementById("chartForm")
         formElement.addEventListener("submit", async function(){
-		let name = document.getElementById("name").options[value.selectedIndex].text;
-		let year = document.getElementById("year").options[value.selectedIndex].text
-            const url = "https://api.letsplaywithballs.com/?name=" + name + "&year=" + year;
+		const formdata = new formData(formElement);
+		let name = formdata.get('name');
+		let year = formdata.get('year');
+		
+		const url = "https://api.letsplaywithballs.com/?name=" + name + "&year=" + year;
             try{
                 const response = await
                 fetch(url, {mode: 'cors'});
