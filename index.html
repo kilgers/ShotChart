@@ -16,9 +16,9 @@
             const url = "https://api.letsplaywithballs.com/?name=" + selectedValue + "&get_active_years=True"
             try{
                 const response = await
-                fetch(url, {mode: 'no-cors'});
+                fetch(url, {mode: 'cors'});
                 if(!response.ok){
-                    throw new Error("Response status: ${response.status}");
+                    throw new Error("Response status " + response.status;
 			console.log(response.status);
 			console.log(response.url);
                 }
@@ -46,7 +46,7 @@
             const url = "https://api.letsplaywithballs.com/?name=" + name + "&year=" + year;
             try{
                 const response = await
-                fetch(url, {mode: 'no-cors'});
+                fetch(url, {mode: 'cors'});
                 if(!response.ok){
                     throw new Error("Response status: ${response.status}");
                 }
