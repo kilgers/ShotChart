@@ -99,6 +99,6 @@
 		let hiddenElements = document.getElementsByClassName("player2");
 		console.log(hiddenElements);
 		for(let i = 0; i < hiddenElements.length; i++){
-		hiddenElements[i].style.display = "block";
+		hiddenElements[i].style.display = "inline";
 		}
 		}
