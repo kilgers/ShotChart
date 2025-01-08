@@ -60,7 +60,7 @@
 		const formdata = new FormData(formElement);
 		let playername = formdata.get("playername");
 		let year = formdata.get("year");
-		let player2name = formdata.get("playername");
+		let player2name = formdata.get("player2name");
 		console.log(player2name)
 		let year2 = formdata.get("year2");
 		
