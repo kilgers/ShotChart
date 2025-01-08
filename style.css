@@ -1,0 +1,50 @@
+.sidebar{
+  --dot-bg: #962d06;
+  --dot-color: #C43708;
+  --dot-size: 4px;
+  --dot-space: 2px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 80%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 80%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+    float: left;
+    margin: 0;
+    padding: 25px 0px;
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    color: #decaab;
+}
+.player2{
+	display : none;
+}
+footer{
+  --dot-bg: #962d06;
+  --dot-color: #C43708;
+  --dot-size: 4px;
+  --dot-space: 2px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 80%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 80%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    text-align: center;
+    height: 30px;
+
+    
+}
+.chart {
+    width: 72%;
+    float: right;
+    padding: 25px 0px;
+    margin: 0;
+    color: black;
+}
+#df_table{
+font-size: 12px;
+}
+
+
