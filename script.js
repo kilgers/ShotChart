@@ -78,7 +78,7 @@
             } catch (error) {
             console.error(error.message)};
 			
-		if (typeof player2name !== "undefined"){
+		if (player2name.length > 0){
 		const url = "https://api.letsplaywithballs.com/?name=" + player2name + "&year=" + year2;
 			console.log(player2name);
             try{
